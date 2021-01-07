@@ -1,0 +1,135 @@
+@charset "utf-8";
+@import "_var","_mixin","_function";
+
+#mainWrap{
+    overflow: hidden;position: absolute;top: 0;left: 0;width: 100%;height: 100vh;
+    /* intro */
+    #intro{position: absolute;top: 0;left: 0;z-index: 100;width: 100%;height: 100vh;}
+    /* #conceptImg */
+    #conceptImg{
+        position: absolute;top: 15%;left: 15%;width: 70%;height: 70%;
+        img{
+            display: none;position: absolute;top: 0;left: 0;width: 100%;height: 100%;
+            &.concept_m{top:50%;left:50%;width: auto;height: auto;transform:translate(-50%, -50%);}
+            &.first{display: block;}
+        }
+    }
+    /* #conceptTxt */
+    #conceptTxt{
+        @include transform(scaleX(0));
+        @include transition(transform 1s);
+        width: 100%;position: absolute;top: 0;left: 0;z-index: 100;display: flex;
+        &.scale{@include transform(scaleX(1));}
+        >*{width: 50%;height: 100vh;}
+        span{font-size: 120px;color: #fff;}
+        
+    }
+    .left_txt{
+        position: relative;perspective:1000px;overflow: hidden;
+        > div{
+            @include transition(all 1s);
+            position: absolute;top: 0;left: 0;width: 100%;height: 100%;backface-visibility: hidden;flex-direction: row-reverse;
+        }
+        .left_txt1{
+            @include transform(rotateX(0deg));
+            background: #b845b8;
+        }
+        .left_txt2{
+            @include transform(rotateX(-180deg));
+            background: #69bd15;
+        }
+        &.flip .left_txt1{
+            @include transform(rotateX(180deg));
+        }
+        &.flip .left_txt2{
+            @include transform(rotateX(0deg));
+        }
+    }
+    
+    .right_txt{background: #b845b8;}
+    .left_txt1, .left_txt2, .right_txt{display: flex;align-items: center;}
+    
+    
+    /* home */
+    #home{
+        width:100%;height: 100vh;margin:0 auto;position:relative;
+        .home_btn{
+            @include transform(scaleX(0));
+            @include transition(all 0.4s);position:absolute;
+            &.scale{ @include transform(scaleX(1));}
+            .video_wrap{position:absolute;z-index:0;left:0px;}
+            .txt_mask{
+                @include bgsize(cover);
+                position:absolute;top:0;z-index:1;background:no-repeat center center;
+            }
+        }
+    }
+    /* leftText */
+    #leftText{
+        &,#leftTextMask,#leftVideoWrap{width:550px;height:550px;}
+        top:120px;left:calc(50% - 550px);
+        #leftVideoWrap{top:-35px;overflow: hidden;}
+        #leftVideoWrap video{
+        @include transform(translateY(-2px));
+        width:600px;height:550px;position:relative;top:0px;}
+        #leftTextMask{background-image:url(../images/left_mask.png);}
+    }
+     /* rightText */
+    #rightText{
+        &,#rightTextMask{width:380px;height:570px;}
+        top:190px;left:50%;
+        #rightVideoWrap{top:90px;width:380px;height:400px;}
+        #rightTextMask{background-image:url(../images/right_mask.png);}
+    }
+}
+
+#aboutWrap{
+    position: absolute;top: 0;left: -350%;width: 350%;height: 100vh;display: flex;flex-direction:row-reverse;
+
+    #move_about{
+        @include transition(all 0.6s);
+        width: 71.42857142857143%;height: 100vh;position: relative;
+        &.opa0{opacity: 0;}
+        .chronicle{
+            @include translateY-50;
+            display: flex;justify-content: space-around;position: absolute;top: 50%;left: 0;width: 100%;height: 400px;background: #e42024;overflow: hidden;
+            span{color: #fff;font-weight: 700;font-size: 100px;line-height: 0.8;position: relative;}
+            span:nth-of-type(odd){top: -30px;}
+            span:nth-of-type(even){top: 260px;}
+        }
+    }
+    #about{
+        width: 28.57142857142857%;height: 300vh;
+            .bright{
+                -webkit-animation: brightness 5.5s 7s;
+                animation: brightness 5.5s 7s;
+            }
+    }
+}
+
+@-webkit-keyframes brightness {
+    0%  { -webkit-filter: brightness(10); }
+    100% { -webkit-filter: brightness(none); }
+  }
+@keyframes brightness {
+    0%{ filter: brightness(10);}
+    100% { filter:brightness(none);}
+  }
+
+
+
+
+
+
+
+
+#pfWrap{
+   position: absolute;left: 100%;top: 0;width: 100%;height: 100vh;
+   background:chartreuse;
+}
+
+
+
+
+
+
