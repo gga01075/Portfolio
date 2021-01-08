@@ -191,15 +191,9 @@
   display: flex;
   flex-direction: row-reverse; }
   #aboutWrap #move_about {
-    -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -o-transition: all 0.6s;
-    transition: all 0.6s;
     width: 71.42857142857143%;
     height: 100vh;
     position: relative; }
-    #aboutWrap #move_about.opa0 {
-      opacity: 0; }
     #aboutWrap #move_about .chronicle {
       -webkit-transform: translateY(-50%);
       -moz-transform: translateY(-50%);
@@ -227,27 +221,271 @@
         top: 260px; }
   #aboutWrap #about {
     width: 28.57142857142857%;
-    height: 300vh; }
-    #aboutWrap #about .bright {
-      -webkit-animation: brightness 5.5s 7s;
-      animation: brightness 5.5s 7s; }
+    height: 300vh;
+    background: url("../images/about/08.png") no-repeat center center; }
 
-@-webkit-keyframes brightness {
-  0% {
-    -webkit-filter: brightness(10); }
-  100% {
-    -webkit-filter: brightness(none); } }
-@keyframes brightness {
-  0% {
-    filter: brightness(10); }
-  100% {
-    filter: brightness(none); } }
 #pfWrap {
   position: absolute;
-  left: 100%;
+  left: 0%;
   top: 0;
   width: 100%;
-  height: 100vh;
-  background: chartreuse; }
+  overflow: hidden; }
+  #pfWrap .pf {
+    height: 100vh; }
+    #pfWrap .pf h3, #pfWrap .pf strong, #pfWrap .pf > p {
+      font-family: RobotoM, sans-serif; }
+  #pfWrap .pf_main {
+    display: flex;
+    height: 100vh; }
+    #pfWrap .pf_main > article {
+      width: 50%;
+      height: 100vh; }
+      #pfWrap .pf_main > article h3 {
+        line-height: 1;
+        font-weight: 600; }
+    #pfWrap .pf_main .pf_intro {
+      -webkit-background-size: cover !important;
+      -moz-background-size: cover !important;
+      background-size: cover !important;
+      position: relative;
+      background: url("../images/about/pf_top_bg.jpg") no-repeat center center; }
+      #pfWrap .pf_main .pf_intro .pf_img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        height: 920px;
+        width: 251px;
+        background: url("../images/portfolio/pf_txt.png") no-repeat center center; }
+      #pfWrap .pf_main .pf_intro .pf_intro_txt {
+        position: absolute;
+        top: 22.87234042553191vh;
+        left: 35.3%;
+        height: 37.76595744680851vh;
+        width: 49.8%;
+        /* background: aquamarine; */ }
+        #pfWrap .pf_main .pf_intro .pf_intro_txt h3 {
+          font-size: 70px;
+          letter-spacing: -0.08em;
+          margin-bottom: 40px; }
+        #pfWrap .pf_main .pf_intro .pf_intro_txt ul li {
+          margin-bottom: 50px;
+          font-size: 24px; }
+    #pfWrap .pf_main .skill {
+      background: #fff; }
+      #pfWrap .pf_main .skill, #pfWrap .pf_main .skill .skill_box {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      #pfWrap .pf_main .skill .skill_box {
+        width: 350px;
+        height: 350px;
+        background: url("../images/portfolio/skill_box.png") no-repeat center center; }
+      #pfWrap .pf_main .skill h3 {
+        display: inline-block;
+        font-size: 50px;
+        letter-spacing: -0.075em; }
+  #pfWrap .pf_list {
+    padding-left: 40px;
+    position: relative; }
+    #pfWrap .pf_list .pf_tit {
+      font-weight: 700;
+      color: #000; }
+      #pfWrap .pf_list .pf_tit h3, #pfWrap .pf_list .pf_tit .web_kind {
+        display: inline-block;
+        background: #fdfbf7; }
+      #pfWrap .pf_list .pf_tit h3 {
+        font-size: 230px;
+        line-height: 0.8;
+        padding: 0 10px 15px 5px; }
+      #pfWrap .pf_list .pf_tit .web_kind {
+        font-size: 55px;
+        letter-spacing: -0.05rem; }
+    #pfWrap .pf_list .pf_point .target, #pfWrap .pf_list .pf_point .skill, #pfWrap .pf_list .pf_point .explanation, #pfWrap .pf_list .pf_point .date, #pfWrap .pf_list .pf_point .font {
+      padding: 10px 30px 20px 20px;
+      color: #fff;
+      display: inline-block; }
+      #pfWrap .pf_list .pf_point .target strong, #pfWrap .pf_list .pf_point .skill strong, #pfWrap .pf_list .pf_point .explanation strong, #pfWrap .pf_list .pf_point .date strong, #pfWrap .pf_list .pf_point .font strong {
+        font-size: 38px; }
+      #pfWrap .pf_list .pf_point .target ul li, #pfWrap .pf_list .pf_point .target p, #pfWrap .pf_list .pf_point .skill ul li, #pfWrap .pf_list .pf_point .skill p, #pfWrap .pf_list .pf_point .explanation ul li, #pfWrap .pf_list .pf_point .explanation p, #pfWrap .pf_list .pf_point .date ul li, #pfWrap .pf_list .pf_point .date p, #pfWrap .pf_list .pf_point .font ul li, #pfWrap .pf_list .pf_point .font p {
+        font-size: 20px;
+        margin-top: 15px;
+        letter-spacing: -0.05rem; }
+      #pfWrap .pf_list .pf_point .target ul::after, #pfWrap .pf_list .pf_point .skill ul::after, #pfWrap .pf_list .pf_point .explanation ul::after, #pfWrap .pf_list .pf_point .date ul::after, #pfWrap .pf_list .pf_point .font ul::after {
+        content: "";
+        display: block;
+        clear: both; }
+      #pfWrap .pf_list .pf_point .target ul li, #pfWrap .pf_list .pf_point .skill ul li, #pfWrap .pf_list .pf_point .explanation ul li, #pfWrap .pf_list .pf_point .date ul li, #pfWrap .pf_list .pf_point .font ul li {
+        float: left; }
+      #pfWrap .pf_list .pf_point .target ul li + li, #pfWrap .pf_list .pf_point .skill ul li + li, #pfWrap .pf_list .pf_point .explanation ul li + li, #pfWrap .pf_list .pf_point .date ul li + li, #pfWrap .pf_list .pf_point .font ul li + li {
+        margin-left: 30px; }
+    #pfWrap .pf_list .pf_point .target {
+      background: #025b26; }
+    #pfWrap .pf_list .pf_point .skill {
+      background: #232a56; }
+    #pfWrap .pf_list .pf_point .explanation {
+      background: #222;
+      font-size: 18px !important;
+      line-height: 1.5; }
+    #pfWrap .pf_list .pf_point .date {
+      background: #db391f; }
+    #pfWrap .pf_list .pf_point .font {
+      background: #54380d; }
+    #pfWrap .pf_list .color_box {
+      width: 270px;
+      height: 270px;
+      border: 12px solid #4e597a;
+      position: relative; }
+      #pfWrap .pf_list .color_box > div {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        position: absolute; }
+    .pc_web .screen {
+      background: #fdfbf7; }
+    #pfWrap .pf_list .pf_tit > *, #pfWrap .pf_list .pf_point > * {
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px; }
+  #pfWrap .pc_web {
+    position: relative; }
+    #pfWrap .pc_web .screen {
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      position: absolute;
+      top: calc(100vh - 28.95833333333333vw);
+      left: 250px;
+      z-index: 10;
+      width: 46.14583333333333vw;
+      height: 28.95833333333333vw;
+      padding: 15px; }
+      #pfWrap .pc_web .screen a, #pfWrap .pc_web .screen img {
+        width: 100%;
+        height: 100%; }
+    #pfWrap .pc_web .pf_tit {
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      position: absolute;
+      left: -240px;
+      bottom: 287px; }
+      #pfWrap .pc_web .pf_tit .web_kind {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg); }
+    #pfWrap .pc_web .pf_point {
+      position: absolute;
+      right: 72px;
+      bottom: 0;
+      width: 692px; }
+      #pfWrap .pc_web .pf_point::after {
+        content: "";
+        display: block;
+        clear: both; }
+      #pfWrap .pc_web .pf_point > * {
+        float: left;
+        margin-right: 3px; }
+    #pfWrap .pc_web #pf1 {
+      background: #a18585;
+      position: relative; }
+      #pfWrap .pc_web #pf1 .pf_point > div:nth-of-type(3), #pfWrap .pc_web #pf1 .pf_point > div:nth-of-type(4) {
+        margin-top: 3px;
+        margin-bottom: 3px; }
+      #pfWrap .pc_web #pf1 .explanation {
+        width: 692px; }
+      #pfWrap .pc_web #pf1 .color_box {
+        -webkit-transform: rotate(-35deg);
+        -moz-transform: rotate(-35deg);
+        -o-transform: rotate(-35deg);
+        -ms-transform: rotate(-35deg);
+        transform: rotate(-35deg);
+        position: absolute;
+        right: 55px;
+        bottom: 250px; }
+        #pfWrap .pc_web #pf1 .color_box .color1 {
+          background: #9c0a1f;
+          width: 100px;
+          height: 100px;
+          left: 0;
+          bottom: 0; }
+        #pfWrap .pc_web #pf1 .color_box .color2 {
+          background: #f7f4f1;
+          width: 70px;
+          height: 70px;
+          left: 100px;
+          bottom: 0; }
+    #pfWrap .pc_web #pf2 {
+      background: #bbb9b8; }
+      #pfWrap .pc_web #pf2 .color_box {
+        position: absolute;
+        right: 55px;
+        bottom: 270px; }
+        #pfWrap .pc_web #pf2 .color_box .color1 {
+          background: #7e7a71;
+          width: 105px;
+          height: 105px;
+          left: 0;
+          bottom: 0; }
+        #pfWrap .pc_web #pf2 .color_box .color2 {
+          background: #355851;
+          width: 50px;
+          height: 50px;
+          left: 68px;
+          top: 102px; }
+        #pfWrap .pc_web #pf2 .color_box .color3 {
+          background: #fde533;
+          width: 140px;
+          height: 140px;
+          right: 0;
+          bottom: 0; }
+  #pfWrap #pf3 {
+    background: #acafb5; }
+    #pfWrap #pf3 .pf_tit {
+      position: absolute;
+      left: 40px;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start; }
+      #pfWrap #pf3 .pf_tit h3 {
+        font-size: 200px;
+        letter-spacing: -0.05em; }
+      #pfWrap #pf3 .pf_tit p {
+        display: inline-block;
+        padding: 6px 10px 12px 10px; }
+    #pfWrap #pf3 .pf_point {
+      position: absolute;
+      left: 40px;
+      bottom: 0;
+      width: 700px; }
+      #pfWrap #pf3 .pf_point .skill ul li + li {
+        margin-left: 33px; }
+      #pfWrap #pf3 .pf_point .date, #pfWrap #pf3 .pf_point .font, #pfWrap #pf3 .pf_point .target {
+        padding: 10px 20px 20px 10px; }
+    #pfWrap #pf3 .screen {
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      position: absolute;
+      bottom: 0;
+      left: 760px;
+      width: 19.58333333333333vw;
+      height: 39.16666666666667vw;
+      background: #000;
+      padding: 38px 7px 71px; }
+  #pfWrap #pf4 {
+    background: #a299a5; }
+    #pfWrap #pf4 .screen {
+      width: 46.14583333333333vw;
+      height: 28.95833333333333vw;
+      padding: 15px;
+      background: #fdfbf7; }
+      #pfWrap #pf4 .screen a, #pfWrap #pf4 .screen img {
+        width: 100%;
+        height: 100%; }
 
 /*# sourceMappingURL=main.css.map */

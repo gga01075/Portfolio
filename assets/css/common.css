@@ -9,8 +9,8 @@
   font-family: NtSansKR;
   font-weight: 700;
   font-style: normal;
-  src: url("../fonts/NotoSansKR-Medium.eot");
-  src: url("../fonts/NotoSansKR-Medium.eot#iefix") format("embedded-opentype"), url("../fonts/NotoSansKR-Medium.woff2") format("woff2"), url("../fonts/NotoSansKR-Medium.woff") format("woff"), url("../fonts/NotoSansKR-Medium.otf") format("opentype"); }
+  src: url("../fonts/NotoSansKR-Bold.eot");
+  src: url("../fonts/NotoSansKR-Bold.eot#iefix") format("embedded-opentype"), url("../fonts/NotoSansKR-Bold.woff2") format("woff2"), url("../fonts/NotoSansKR-Bold.woff") format("woff"), url("../fonts/NotoSansKR-Bold.otf") format("opentype"); }
 @font-face {
   font-family: RobotoM;
   font-weight: 600;
@@ -103,11 +103,12 @@ address {
   float: right; }
 
 body {
-  font-family: NotoSansKR, "맑은 고딕", "Malgun Gothic", sans-serif;
+  font-family: NtSansKR, "맑은 고딕", "Malgun Gothic", sans-serif;
   font-size: 20px;
   color: #000;
-  line-height: 1.5;
-  overflow-x: hidden; }
+  line-height: 1;
+  overflow-x: hidden;
+  letter-spacing: -0.06em; }
 
 body * {
   box-sizing: border-box; }
