@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0); //뷰포트넓이
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);  //뷰포트높이
+    // console.log(w, h);
 
     /* 인트로 */
     var conceptImg = 0;
@@ -9,7 +12,7 @@ $(document).ready(function(){
             $('#conceptImg').hide();
         }
         num++;
-        console.log(num);
+        // console.log(num);
         $('#conceptImg img').eq(num).show().siblings().hide();
     },300);
 
@@ -48,6 +51,7 @@ _home.find('#leftText').on({
     $(this).stop().animate({left:left_txt_pos,top:120},100);  
     }
 });
+
 /* 포트폴리오 버튼 hover이벤트 */
 _home.find('#rightText').on({
     'mouseenter focus':function(){
@@ -60,14 +64,61 @@ _home.find('#rightText').on({
 
 /* about버튼 클릭이벤트 */
 _home.find('#leftText').on('click',function(){
-    $('#mainWrap').stop().animate({left:'350%'},8000,'easeInExpo');
-    $('#aboutWrap').stop().animate({left:0},8000,'easeInExpo');
-    $('#about img').addClass('bright');
+    $('#mainWrap').stop().animate(
+        {left:'350%'},
+        {
+            duration: 8000,
+            easing: 'easeInCirc',
+            progress: function(animation, progress) {
+                if (progress > 0.71) {
+                    // console.log(progress);
+                    $('#clock>div').fadeIn();
+                }
+            }
+       }
+    );
+
+    $('#aboutWrap').stop().animate({left:0},8000,'easeInCirc');
+    $('#about img').addClass('bright'); 
     setTimeout(function(){
         $('#move_about').addClass('opa0');
     },7500);
 });
 
+// #about의 그림과 텍스트에 번호메기기
+var stepElems = document.querySelectorAll('#about .step');
+var graphicElems = document.querySelectorAll('#about .graphic-item');
+// console.log(stepElems, graphicElems);
 
+for(var i=0;i<stepElems.length;i++){
+    stepElems[i].attr('data-index',i);
+    graphicElems[i].attr('data-index',i);
+}
+
+
+/* about에서 스크롤이벤트 */
+$(window).on('scroll',function(){
+    var step;
+    var boundingRect;
+    var currentItem; /* 현재 활성화된(visible클래스가 붙은) .graphic-item을 지정 */
+    for(var i=0;i<stepElems.length;i++){
+        step = stepElems.eq(i);
+       
+        boundingRect = step.offset().top;
+        // console.log(step,boundingRect,$(window).innerHeight() * 0.1); 
+
+        if( (boundingRect > $(window).innerHeight() * 0.1) && (boundingRect < $(window).innerHeight() * 0.8)){
+            console.log(step.data('index'));
+            /*             
+            if(currentItem){
+                currentItem.removeClass('visible');
+            }
+            currentItem =  graphicElems[step.data('index')];
+            currentItem.addClass('visible'); 
+            */
+            
+        }
+    }
+});
 
 });
