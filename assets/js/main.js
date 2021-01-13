@@ -91,8 +91,8 @@ var graphicElems = document.querySelectorAll('#about .graphic-item');
 // console.log(stepElems, graphicElems);
 
 for(var i=0;i<stepElems.length;i++){
-    stepElems[i].attr('data-index',i);
-    graphicElems[i].attr('data-index',i);
+    stepElems[i].dataset.index = i;
+    graphicElems[i].dataset.index = i;
 }
 
 
@@ -100,22 +100,21 @@ for(var i=0;i<stepElems.length;i++){
 $(window).on('scroll',function(){
     var step;
     var boundingRect;
-    var currentItem; /* 현재 활성화된(visible클래스가 붙은) .graphic-item을 지정 */
+    var currentItem = graphicElems[0]; /* 현재 활성화된(visible클래스가 붙은) .graphic-item을 지정 */
     for(var i=0;i<stepElems.length;i++){
-        step = stepElems.eq(i);
+        step = stepElems[i];
        
-        boundingRect = step.offset().top;
-        // console.log(step,boundingRect,$(window).innerHeight() * 0.1); 
+        boundingRect = step.getBoundingClientRect();
+        // console.log(boundingRect.top,$(window).innerHeight() * 0.1); 
 
-        if( (boundingRect > $(window).innerHeight() * 0.1) && (boundingRect < $(window).innerHeight() * 0.8)){
-            console.log(step.data('index'));
-            /*             
+        if( (boundingRect.top > $(window).innerHeight() * 0.1) && (boundingRect.top < $(window).innerHeight() * 0.8)){
+            console.log(step.dataset.index);          
             if(currentItem){
-                currentItem.removeClass('visible');
+                currentItem.classList.remove('visible');
             }
-            currentItem =  graphicElems[step.data('index')];
-            currentItem.addClass('visible'); 
-            */
+            currentItem =  graphicElems[step.dataset.index];
+            currentItem.classList.add('visible');
+            
             
         }
     }
