@@ -89,32 +89,42 @@ _home.find('#leftText').on('click',function(){
 var stepElems = document.querySelectorAll('#about .step');
 var graphicElems = document.querySelectorAll('#about .graphic-item');
 // console.log(stepElems, graphicElems);
+var currentItem = graphicElems[0]; /* 현재 활성화된(visible클래스가 붙은) .graphic-item을 지정 */
+var ioIndex;
+
+const io = new IntersectionObserver((entries, observer) =>{
+    console.log(entries);
+    ioIndex = entries[0].target.dataset.index*1;
+    console.log(ioIndex);
+});
 
 for(var i=0;i<stepElems.length;i++){
+    io.observe(stepElems[i]);
     stepElems[i].dataset.index = i;
     graphicElems[i].dataset.index = i;
 }
 
-
+function activate(){
+    currentItem.classList.add('visible');
+}
+function inactivate(){
+    currentItem.classList.remove('visible');
+}
 /* about에서 스크롤이벤트 */
 $(window).on('scroll',function(){
     var step;
     var boundingRect;
-    var currentItem = graphicElems[0]; /* 현재 활성화된(visible클래스가 붙은) .graphic-item을 지정 */
-    for(var i=0;i<stepElems.length;i++){
+
+    for(var i=ioIndex-1;i<ioIndex+2;i++){
         step = stepElems[i];
-       
+        if(!step) continue;
         boundingRect = step.getBoundingClientRect();
         // console.log(boundingRect.top,$(window).innerHeight() * 0.1); 
-
-        if( (boundingRect.top > $(window).innerHeight() * 0.1) && (boundingRect.top < $(window).innerHeight() * 0.8)){
-            console.log(step.dataset.index);          
-            if(currentItem){
-                currentItem.classList.remove('visible');
-            }
+        if( boundingRect.top > $(window).innerHeight() * 0.1 && boundingRect.top < $(window).innerHeight() * 0.8){
+            // console.log(step.dataset.index);          
+            inactivate();
             currentItem =  graphicElems[step.dataset.index];
-            currentItem.classList.add('visible');
-            
+            activate();
             
         }
     }
