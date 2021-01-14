@@ -259,7 +259,11 @@
     #aboutWrap #about .global-width {
       max-width: 620px;
       margin: 0 auto;
-      padding: 0 1rem; }
+      padding: 0 1rem;
+      text-align: center;
+      padding-top: 60px; }
+      #aboutWrap #about .global-width h2 {
+        font-size: 30px; }
     #aboutWrap #about .scroll-graphic {
       position: sticky;
       top: 0;
