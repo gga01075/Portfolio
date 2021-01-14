@@ -18,9 +18,10 @@ $(window).on('scroll',function(){
         }
 
         if($(this).scrollTop() < 1493){
-            $('.pc_web .screen img').attr({'src':'../assets/images/portfolio/jaws_screen.JPG','alt':'죠스떡볶이 메인화면'});
+            $('.pc_web .screen a').attr({'href':'https://gga01075.github.io/Jaws/index.html'}).children().attr({'src':'../assets/images/portfolio/jaws_screen.JPG','alt':'죠스떡볶이 메인화면'});
+
         }else{
-            $('.pc_web .screen img').attr({'src':'../assets/images/portfolio/pubg_screen.png','alt':'PUBG 메인화면'});
+            $('.pc_web .screen a').attr({'href':'https://gga01075.github.io/PUBG/'}).children().attr({'src':'../assets/images/portfolio/pubg_screen.png','alt':'PUBG 메인화면'});
         }
     },10);
 });
