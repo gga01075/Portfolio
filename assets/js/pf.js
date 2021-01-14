@@ -18,9 +18,9 @@ $(window).on('scroll',function(){
         }
 
         if($(this).scrollTop() < 1493){
-            $('.pc_web .screen img').attr({'src':'assets/images/portfolio/jaws_screen.jpg','alt':'죠스떡볶이 메인화면'});
+            $('.pc_web .screen img').attr({'src':'../assets/images/portfolio/jaws_screen.jpg','alt':'죠스떡볶이 메인화면'});
         }else{
-            $('.pc_web .screen img').attr({'src':'assets/images/portfolio/pubg_screen.png','alt':'PUBG 메인화면'});
+            $('.pc_web .screen img').attr({'src':'../assets/images/portfolio/pubg_screen.png','alt':'PUBG 메인화면'});
         }
     },10);
 });
